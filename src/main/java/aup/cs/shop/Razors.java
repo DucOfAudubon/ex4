@@ -1,9 +1,9 @@
 package aup.cs.shop;
 
-public class Razors extends Shave{
+public final class Razors extends Shave{
 
-    public Razors(String title, double price){
-        super(title, price);
+    public Razors(String title, double price, boolean isMale){
+        super(title, price, isMale);
     }
 
     public String toString(){

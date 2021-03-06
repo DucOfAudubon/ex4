@@ -5,15 +5,17 @@ public class ShavingProduct {
     private long id;
     private String title;
     private double price;
+    private boolean isMale;
 
-    public ShavingProduct(String title, double price){
-        this(true, title, price);
+    protected ShavingProduct(String title, double price, boolean isMale){
+        this(true, title, price, isMale);
     }
 
-    public ShavingProduct(boolean inStock, String title, double price){
+    protected ShavingProduct(boolean inStock, String title, double price, boolean isMale){
         totalIds++;
         this.id = totalIds;
         this.title = title;
+        this.isMale = isMale;
         if(inStock){
             this.price = price;
         }
@@ -29,5 +31,9 @@ public class ShavingProduct {
 
     public long getId() {
         return id;
+    }
+
+    public boolean isMale(){
+        return isMale;
     }
 }

@@ -1,9 +1,9 @@
 package aup.cs.shop;
 
-public class Soaps extends Shave{
+public final class Soaps extends Shave{
 
-    public Soaps(boolean inStock, String title, double price){
-        super(inStock, title, price);
+    public Soaps(boolean inStock, String title, double price, boolean isMale){
+        super(inStock, title, price, isMale);
     }
 
     public String toString(){

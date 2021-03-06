@@ -3,15 +3,15 @@ package aup.cs.shop;
 public class Shave extends ShavingProduct{
     private String category = "Shave";
 
-    public Shave(String title, double price){
-        super(title, price);
+    protected Shave(String title, double price, boolean isMale){
+        super(title, price, isMale);
     }
 
-    public Shave(boolean inStock, String title, double price){
-        super(inStock, title, price);
+    protected Shave(boolean inStock, String title, double price, boolean isMale){
+        super(inStock, title, price, isMale);
     }
 
-    public String toString(){
+    protected String toString(){
         String stringForm = super.toString();
         stringForm += "\t" + category;
         return stringForm;

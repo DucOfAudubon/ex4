@@ -1,10 +1,10 @@
 package aup.cs.shop;
 
-public class Brushes extends Shave{
+public final class Brushes extends Shave{
     private String material;
 
-    public Brushes(String title, double price, String material){
-        super(title, price);
+    public Brushes(String title, double price, boolean isMale, String material){
+        super(title, price, isMale);
         this.material = material;
     }
 
