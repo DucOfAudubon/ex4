@@ -1,7 +1,7 @@
 package aup.cs.shop;
 
-public final class Beard extends ShavingProduct{
-    private String category = "Beard";
+public final class Beard extends Cosmetics{
+    private String category = " > Beard";
 
     public Beard(String title, double price, boolean isMale){
         super(title, price, isMale);

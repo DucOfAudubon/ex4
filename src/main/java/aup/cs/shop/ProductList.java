@@ -6,15 +6,23 @@ import java.util.ArrayList;
 
 
 public class ProductList {
-    private ArrayList<ShavingProduct> allProducts = new ArrayList<ShavingProduct>();
+    private ArrayList<Product> allProducts = new ArrayList<Product>();
 
-    public ProductList(ShavingProduct[] shavingProducts){
-        for(int i = 0; i < shavingProducts.length; i++){
-            this.allProducts.add(shavingProducts[i]);
+    public ProductList(Product[] products){
+        for(int i = 0; i < products.length; i++){
+            this.allProducts.add(products[i]);
         }
     }
 
-    public ArrayList<ShavingProduct> getAllProducts() {
+    public ArrayList<Product> getAllProducts() {
         return allProducts;
+    }
+
+    public void removeById(long id){
+        for(Product i : allProducts){
+            if(id == i.getId()){
+                this.allProducts.remove(i);
+            }
+        }
     }
 }

@@ -7,7 +7,7 @@ public class Shop {
     System.out.println(createFeed());
   }
 
-  public static ShavingProduct[] init(){
+  public static Product[] init(){
     Brushes brush1 = new Brushes("Fine Horn Shaving Brush", 185.00, true, "Badger Fur");
     Brushes brush2 = new Brushes("Engraved Silvertip Shaving Brush", 250.00, true, "Silvertip Badger Fur");
     Creams cream1 = new Creams("Lavender Shaving Cream", 12.00, true);
@@ -28,14 +28,14 @@ public class Shop {
     SkinCare skin2 = new SkinCare("Power Brush", 40.00, false);
     Hair hair1 = new Hair("Small Horn Comb", 40.00, true);
     Hair hair2 = new Hair("Large Horn Comb", 75.00, true);
-    ShavingProduct[] arraySP = {brush1, brush2, cream1, cream2, post1, post2, pre1, pre2, razor1, razor2, shave1, shave2, soap1, soap2, beard1, beard2, skin1, skin2, hair1, hair2};
-    return arraySP;
+    Product[] arrayP = {brush1, brush2, cream1, cream2, post1, post2, pre1, pre2, razor1, razor2, shave1, shave2, soap1, soap2, beard1, beard2, skin1, skin2, hair1, hair2};
+    return arrayP;
   }
 
   public static String createFeed(){
     String feed = "id \t title \t price \t category \t material \n";
-    ArrayList<ShavingProduct> prodsList = fillShop();
-    for(ShavingProduct i : prodsList){
+    ArrayList<Product> prodsList = fillShop();
+    for(Product i : prodsList){
       feed += i.toString() + "\n";
     }
     return feed;
@@ -43,8 +43,8 @@ public class Shop {
 
   public static String createMenFeed(){
     String feed = "id \t title \t price \t category \t material \n";
-    ArrayList<ShavingProduct> prodsList = fillShop();
-    for(ShavingProduct i : prodsList){
+    ArrayList<Product> prodsList = fillShop();
+    for(Product i : prodsList){
       if(i.isMale()) {
         feed += i.toString() + "\n";
       }
@@ -54,8 +54,8 @@ public class Shop {
 
   public static String createWomenFeed(){
     String feed = "id \t title \t price \t category \t material \n";
-    ArrayList<ShavingProduct> prodsList = fillShop();
-    for(ShavingProduct i : prodsList){
+    ArrayList<Product> prodsList = fillShop();
+    for(Product i : prodsList){
       if(!i.isMale()) {
         feed += i.toString() + "\n";
       }
@@ -63,8 +63,8 @@ public class Shop {
     return feed;
   }
 
-  public static ArrayList<ShavingProduct> fillShop(){
-    ShavingProduct[] products = init();
+  public static ArrayList<Product> fillShop(){
+    Product[] products = init();
     ProductList prodsList = new ProductList(products);
     return prodsList.getAllProducts();
   }

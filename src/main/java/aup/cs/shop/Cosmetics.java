@@ -1,13 +1,13 @@
 package aup.cs.shop;
 
-public class ShavingProduct extends Product{
-    private String category = "Shaving Product";
+public class Cosmetics extends Product{
+    private String category = "Cosmetics";
 
-    protected ShavingProduct(String title, double price, boolean isMale){
+    protected Cosmetics(String title, double price, boolean isMale){
         super(title, price, isMale);
     }
 
-    protected ShavingProduct(boolean inStock, String title, double price, boolean isMale){
+    protected Cosmetics(boolean inStock, String title, double price, boolean isMale){
         super(inStock, title, price, isMale);
     }
 

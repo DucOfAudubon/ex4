@@ -1,7 +1,6 @@
 package aup.cs.shop;
 
 public class Shave extends ShavingProduct{
-    private String category = "Shave";
 
     protected Shave(String title, double price, boolean isMale){
         super(title, price, isMale);
@@ -11,9 +10,9 @@ public class Shave extends ShavingProduct{
         super(inStock, title, price, isMale);
     }
 
-    protected String toString(){
+    public String toString(){
         String stringForm = super.toString();
-        stringForm += "\t" + category;
+        stringForm += "\t" + " > Shave";
         return stringForm;
     }
 }
