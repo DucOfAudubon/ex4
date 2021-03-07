@@ -7,6 +7,11 @@ public class Shop {
     System.out.println(createFeed());
   }
 
+  /**
+   * This creates an array of manually inserted products
+   * Huge pain to code
+   * @return an array of Products
+   */
   public static Product[] init(){
     Brushes brush1 = new Brushes("Fine Horn Shaving Brush", 185.00, true, "Badger Fur");
     Brushes brush2 = new Brushes("Engraved Silvertip Shaving Brush", 250.00, true, "Silvertip Badger Fur");
@@ -32,6 +37,11 @@ public class Shop {
     return arrayP;
   }
 
+  /**
+   * Prints a feed of the info for an array of products
+   * Fields are separated by tabs
+   * @return a feed String
+   */
   public static String createFeed(){
     String feed = "id \t title \t price \t category \t material \n";
     ArrayList<Product> prodsList = fillShop();
@@ -41,6 +51,12 @@ public class Shop {
     return feed;
   }
 
+  /**
+   * Same as createFeed, but only uses men's products
+   * Judges based on the isMale getter
+   * If that implementation changes to the cosmetics option, this needs to as well
+   * @return a feed String
+   */
   public static String createMenFeed(){
     String feed = "id \t title \t price \t category \t material \n";
     ArrayList<Product> prodsList = fillShop();
@@ -52,6 +68,12 @@ public class Shop {
     return feed;
   }
 
+  /**
+   * Same as createFeed, but only uses women's products
+   * Judges based on the isMale getter
+   * If that implementation changes to the cosmetics option, this needs to as well
+   * @return a feed String
+   */
   public static String createWomenFeed(){
     String feed = "id \t title \t price \t category \t material \n";
     ArrayList<Product> prodsList = fillShop();
@@ -63,6 +85,11 @@ public class Shop {
     return feed;
   }
 
+  /**
+   * This uses init to make an array of Products and turns it into an ArrayList
+   * Useful because it's way easier to sort and for loop through
+   * @return an ArrayList of Products
+   */
   public static ArrayList<Product> fillShop(){
     Product[] products = init();
     ProductList prodsList = new ProductList(products);
